@@ -1,29 +1,9 @@
 @import url("../vendor/normalize.css");
 @import url("../vendor/fonts.css");
 @import url("../blocks/page.css");
-
-.page__section {
-  max-width: 880px;
-  width: 100%;
-  position: relative;
-  /* padding-right: 10px;
-  padding-left: 10px; */
-  margin: 0 auto;
-}
-
-.page__content {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding-right: 20px;
-  padding-left: 20px;
-}
-
-.header {
-  border-bottom: 1px solid #545454;
-  margin: 45px auto 0 auto;
-  max-width: 880px;
-}
+@import url("../blocks/header.css");
+@import url("../blocks/card.css");
+@import url("../blocks/footer.css");
 
 .profile {
   display: flex;
@@ -37,32 +17,47 @@
     "title button"
     "description description";
   grid-template-columns: minmax(auto, 373px) auto;
-  grid-column-gap: 25px;
+  grid-gap: 7px 25px;
 }
 
 .profile__edit-button {
-  background: transparent url(../images/edit-icon.svg) center no-repeat;
+  background: url(../images/edit-icon.svg) center no-repeat;
+  border: 1px solid #ffffff;
   height: 24px;
   width: 24px;
+  box-sizing: border-box;
   align-self: center;
+  margin-right: 10px;
   grid-area: button;
 }
 
+.profile__edit-button:hover {
+  opacity: 0.5;
+}
+
 .profile__add-button {
-  background: transparent url(../images/add-icon.svg) center no-repeat;
+  background: url(../images/add-icon.svg) center no-repeat;
+  border: 2px solid #ffffff;
   width: 150px;
   height: 50px;
-  padding-left: auto;
+  border-radius: 2px;
+  box-sizing: border-box;
   margin-left: auto;
 }
 
+.profile__add-button:hover {
+  opacity: 0.5;
+}
+
 .profile__title {
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-style: normal;
   font-size: 42px;
   line-height: 48px;
   font-weight: 500;
   grid-area: title;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
 }
 
 .profile__description {
@@ -70,6 +65,10 @@
   line-height: 22px;
   font-weight: 400;
   grid-area: description;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 373px;
   margin: 0;
 }
 
@@ -82,75 +81,36 @@
   margin-right: 24px;
 }
 
-.cards {
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-style: normal;
-  /* font-size: 24px;
-  line-height: 29px;
-  font-weight: 900; */
-  margin-top: 30px;
-}
-
-.card__list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 282px);
-  grid-gap: 20px 17px;
-  list-style-type: none;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-}
-
-.card__image {
-  width: 282px;
-  height: 282px;
-  border-radius: 10px 10px 0px 0px;
-}
-
-.card__description {
-  display: flex;
-  background: white;
-  color: black;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-left: 20px;
-  padding-right: 20px;
-  /* text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden; */
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 0px 0px 10px 10px;
-}
-
-h2 {
-  margin: 0;
-}
-
-.card__like-button {
-  background: transparent url(../images/like-icon.svg) center;
-  width: 21px;
-  height: 18px;
-}
-
-.footer__copyright {
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-size: 18px;
-  line-height: 22px;
-  font-weight: 400;
-  color: #545454;
-  margin: 67px auto 60px auto;
-}
-
 @media screen and (max-width: 480px) {
   .profile {
-    background-color: pink;
     flex-direction: column;
+  }
+
+  .profile__image {
+    margin-bottom: 26px;
+  }
+
+  .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .profile__title {
+    width: 196px;
+    font-size: 22px;
+  }
+
+  .profile__description {
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .profile__add-button {
+    margin: 0;
+    /* max-width: 100%; */
+    width: 282px;
   }
 }
