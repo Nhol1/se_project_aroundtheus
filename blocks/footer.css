@@ -7,3 +7,12 @@
   color: #545454;
   margin: 67px auto 60px auto;
 }
+
+@media screen and (max-width: 480px) {
+  .footer__copyright {
+    font-size: 14px;
+    line-height: 16.94px;
+    max-width: 282px;
+    margin: 48px auto 36px auto;
+  }
+}
