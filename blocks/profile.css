@@ -24,6 +24,7 @@
   margin-right: 10px;
   grid-area: button;
   transition: opacity 1s linear 0s;
+  cursor: pointer;
 }
 
 .profile__edit-button:hover {
@@ -39,6 +40,7 @@
   box-sizing: border-box;
   margin-left: auto;
   transition: opacity 1s linear 0s;
+  cursor: pointer;
 }
 
 .profile__add-button:hover {
@@ -109,6 +111,7 @@
   }
 
   .profile__title {
+    max-width: 196px;
     line-height: 26.63px;
   }
 
